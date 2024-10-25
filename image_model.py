@@ -12,9 +12,9 @@ def get_gemini_response(api_key, prompt, image):
     return response.text
 
 # Initialize the Streamlit app
-st.set_page_config(page_title="Red Chilli AI Function DEMO") 
+st.set_page_config(page_title="Red Chilli AI Function Demo") 
 
-st.header("Gemini Application")
+st.header("Red Chilli AI Function DEMO")
 
 # Set the API key directly
 api_key = "AIzaSyA-dMDZ1SipPy7MUpfkBqV8qPQEIVPTH0g"
