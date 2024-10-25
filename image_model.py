@@ -4,6 +4,7 @@ import streamlit as st
 import os
 
 # Function to get the Gemini AI response
+# Function to get the Gemini AI response
 def get_gemini_response(api_key, prompt, image):
     genai.configure(api_key=api_key)
     model = genai.GenerativeModel(model_name="gemini-1.5-flash")
@@ -11,15 +12,15 @@ def get_gemini_response(api_key, prompt, image):
     return response.text
 
 # Initialize the Streamlit app
-st.set_page_config(page_title="Gemini Vision Bot Demo")
+st.set_page_config(page_title="Red Chilli AI Function DEMO") 
 
 st.header("Gemini Application")
 
-# Input field for the Google API Key
-api_key = st.text_input("Enter your Gemini API Key: ", type="password")
+# Set the API key directly
+api_key = "AIzaSyA-dMDZ1SipPy7MUpfkBqV8qPQEIVPTH0g"
 
-# Input prompt from the user
-prompt = st.text_input("Input Prompt (e.g., 'What is in this photo?'): ", key="input")
+# Set the prompt directly
+prompt = "How many red chilli can be observed and other color type of chilli. Get the total of red chilli and the total other of color of chilli can be observed from the image. Determine how many percent red chilli. No need to explain anything I only need it in percent."
 
 # File uploader to allow users to upload an image
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
@@ -33,7 +34,7 @@ if uploaded_file is not None:
 submit = st.button("Tell me about the image")
 
 # If the submit button is clicked, configure the API key and get the Gemini AI response
-if submit and api_key and image is not None:
+if submit and image is not None:
     try:
         response = get_gemini_response(api_key, prompt, image)
         st.subheader("The Response is:")
