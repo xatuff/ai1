@@ -20,7 +20,7 @@ st.header("Red Chilli AI Function DEMO")
 api_key = "AIzaSyA-dMDZ1SipPy7MUpfkBqV8qPQEIVPTH0g"
 
 # Set the prompt directly
-prompt = "How many red chilli can be observed and other color type of chilli. Get the total of red chilli and the total other of color of chilli can be observed from the image. Determine how many percent red chilli. No need to explain anything I only need it in percent."
+prompt = "How many red chilli can be observed and other color type of chilli. Get the total of red chilli and the total other of color of chilli can be observed from the image. Determine how many percent red chilli. No need to explain anything I only need it in percent. If there's NO CHILLI observed, then just say 0%. Make sure it's concise!"
 
 # File uploader to allow users to upload an image
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
