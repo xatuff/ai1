@@ -4,7 +4,6 @@ import streamlit as st
 import os
 
 # Function to get the Gemini AI response
-# Function to get the Gemini AI response
 def get_gemini_response(api_key, prompt, image):
     genai.configure(api_key=api_key)
     model = genai.GenerativeModel(model_name="gemini-1.5-flash")
@@ -17,27 +16,28 @@ st.set_page_config(page_title="Red Chilli AI Function Demo")
 st.header("Red Chilli AI Function DEMO")
 
 # Set the API key directly
-api_key = "AIzaSyA-dMDZ1SipPy7MUpfkBqV8qPQEIVPTH0g"
+api_key = "AIzaSyCDArjAnWftMGMiQXwVPwfQWDWN09EKMZE"
 
 # Set the prompt directly
 prompt = "How many red chilli can be observed and other color type of chilli. Get the total of red chilli and the total other of color of chilli can be observed from the image. Determine how many percent red chilli. No need to explain anything I only need it in percent. If there's NO CHILLI observed, then just say 0%. Make sure it's concise!"
 
-# File uploader to allow users to upload an image
-uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
-image = None
-
-if uploaded_file is not None:
-    image = PIL.Image.open(uploaded_file)
-    st.image(image, caption="Uploaded Image.", use_column_width=True)
+# File uploader to allow users to upload multiple images
+uploaded_files = st.file_uploader("Choose images...", type=["jpg", "jpeg", "png"], accept_multiple_files=True)
 
 # Button to submit the request
-submit = st.button("Tell me about the image")
+submit = st.button("Analyze Images")
 
-# If the submit button is clicked, configure the API key and get the Gemini AI response
-if submit and image is not None:
-    try:
-        response = get_gemini_response(api_key, prompt, image)
-        st.subheader("The Response is:")
-        st.write(response)
-    except Exception as e:
-        st.error(f"An error occurred: {e}")
+# Process each uploaded image if submit button is clicked
+if submit and uploaded_files:
+    for idx, uploaded_file in enumerate(uploaded_files):
+        try:
+            # Load the image and display it
+            image = PIL.Image.open(uploaded_file)
+            st.image(image, caption=f"Uploaded Image {idx + 1}", use_column_width=True)
+
+            # Get the Gemini AI response for each image
+            response = get_gemini_response(api_key, prompt, image)
+            st.subheader(f"Response for Image {idx + 1}:")
+            st.write(response)
+        except Exception as e:
+            st.error(f"An error occurred with Image {idx + 1}: {e}")
