@@ -73,9 +73,7 @@ with col2:
 if go_to_retrieve:
     st.markdown(
         """
-        <script type="text/javascript">
-            window.open("http://localhost/website/gemini2/retrievealldata.php", "_blank");
-        </script>
+        <meta http-equiv="refresh" content="0; url=http://localhost/website/gemini2/retrievealldata.php" />
         """, unsafe_allow_html=True
     )
 
