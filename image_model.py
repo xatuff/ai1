@@ -71,8 +71,11 @@ with col2:
     go_to_retrieve = st.button("Go to Retrieve All Data")
 
 if go_to_retrieve:
-    st.experimental_set_query_params()
-    st.write(f"<meta http-equiv='refresh' content='0; url=http://localhost/website/gemini2/retrievealldata.php'>", unsafe_allow_html=True)
+    st.markdown(
+        f'<a href="http://localhost/website/gemini2/retrievealldata.php" target="_blank" rel="noopener noreferrer">Go to Retrieve All Data</a>',
+        unsafe_allow_html=True
+    )
+
 
 
 # Process each uploaded image if submit button is clicked
