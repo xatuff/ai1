@@ -72,7 +72,7 @@ with col2:
         """
         <a href="http://localhost/website/gemini2/retrievealldata.php" target="_blank" style="
             display: inline-block; 
-            padding: 12px 24px; 
+            padding: 12px 15px; 
             background-color: #4CAF50; 
             color: white; 
             text-align: center; 
