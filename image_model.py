@@ -70,10 +70,20 @@ with col1:
 with col2:
     go_to_retrieve = st.button("Go to Retrieve All Data")
 
-if go_to_retrieve:
-    st.markdown(
+go_to_retrieve = st.markdown(
         """
-        <meta http-equiv="refresh" content="0; url=http://localhost/website/gemini2/retrievealldata.php" />
+        <a href="http://localhost/website/gemini2/retrievealldata.php" target="_blank" style="
+            display: inline-block; 
+            padding: 12px 24px; 
+            background-color: #4CAF50; 
+            color: white; 
+            text-align: center; 
+            text-decoration: none; 
+            border-radius: 4px; 
+            font-size: 16px; 
+            font-weight: bold;">
+            Go to Retrieve All Data
+        </a>
         """, unsafe_allow_html=True
     )
 
