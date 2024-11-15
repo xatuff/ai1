@@ -80,7 +80,7 @@ with col2:
             border-radius: 4px; 
             font-size: 16px; 
             font-weight: bold;">
-            Go to Retrieve All Data
+            Go to Retrieve All Data!
         </a>
         """, unsafe_allow_html=True
     )
