@@ -72,8 +72,11 @@ with col2:
 
 if go_to_retrieve:
     st.markdown(
-        f'<a href="http://localhost/website/gemini2/retrievealldata.php" target="_blank" rel="noopener noreferrer">Go to Retrieve All Data</a>',
-        unsafe_allow_html=True
+        """
+        <script type="text/javascript">
+            window.open("http://localhost/website/gemini2/retrievealldata.php", "_blank");
+        </script>
+        """, unsafe_allow_html=True
     )
 
 
