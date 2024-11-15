@@ -68,9 +68,7 @@ with col1:
 
 # Add the redirect button in the second column
 with col2:
-    go_to_retrieve = st.button("Go to Retrieve All Data")
-
-go_to_retrieve = st.markdown(
+    go_to_retrieve = st.markdown(
         """
         <a href="http://localhost/website/gemini2/retrievealldata.php" target="_blank" style="
             display: inline-block; 
@@ -86,6 +84,7 @@ go_to_retrieve = st.markdown(
         </a>
         """, unsafe_allow_html=True
     )
+
 
 
 
