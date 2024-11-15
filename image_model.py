@@ -59,9 +59,16 @@ else:
 # File uploader to allow users to upload multiple images
 uploaded_files = st.file_uploader("Choose images...", type=["jpg", "jpeg", "png"], accept_multiple_files=True)
 
-# Button to submit the request
-submit = st.button("Analyze Images")
-st.markdown("[Go to Retrieve All Data](http://localhost/website/gemini2/retrievealldata.php)")
+# Place the buttons in a row
+col1, col2 = st.columns([1, 1])
+
+# Add the "Analyze Images" button in the first column
+with col1:
+    submit = st.button("Analyze Images")
+
+# Add the redirect button in the second column
+with col2:
+    go_to_retrieve = st.button("Go to Retrieve All Data")
 
 
 # Process each uploaded image if submit button is clicked
