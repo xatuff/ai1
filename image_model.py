@@ -59,36 +59,28 @@ else:
 # File uploader to allow users to upload multiple images
 uploaded_files = st.file_uploader("Choose images...", type=["jpg", "jpeg", "png"], accept_multiple_files=True)
 
-# Place the buttons in a row
+# Add the "Analyze Images" button
+submit = st.button("Analyze Images")
 
+# Add the redirect button (separate from Analyze Images button)
+st.markdown(
+    """
+    <a href="http://localhost/website/gemini2/retrievealldata.php" target="_blank" style="
+        display: inline-block; 
+        padding: 10px 10px; 
+        background-color: #4CAF50; 
+        color: white; 
+        text-align: center; 
+        text-decoration: none; 
+        border-radius: 4px; 
+        font-size: 13px; 
+        font-weight: bold;">
+        Go to Retrieve All Data!
+    </a>
+    """, unsafe_allow_html=True
+)
 
-# Add the "Analyze Images" button in the first column
-
-    st.button("Analyze Images")
-
-# Add the redirect button in the second column
-
-    st.markdown(
-        """
-        <a href="http://localhost/website/gemini2/retrievealldata.php" target="_blank" style="
-            display: inline-block; 
-            padding: 10px 10px; 
-            background-color: #4CAF50; 
-            color: white; 
-            text-align: center; 
-            text-decoration: none; 
-            border-radius: 4px; 
-            font-size: 13px; 
-            font-weight: bold;">
-            Go to Retrieve All Data!
-        </a>
-        """, unsafe_allow_html=True
-    )
-
-
-
-
-# Process each uploaded image if submit button is clicked
+# Process each uploaded image if "Analyze Images" button is clicked
 if submit and uploaded_files:
     for idx, uploaded_file in enumerate(uploaded_files):
         try:
