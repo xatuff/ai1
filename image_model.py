@@ -35,7 +35,7 @@ if show_color_options:
             "Get the total of red chilli and the total other of color of chilli can be observed from the image. "
             "Determine and write how many percent red chilli. Then write:  If it's more than (75%) write, "
             "\"Plants is Harvestable\". Else, \"Plant is Not Harvestable yet\". "
-            "The Writting response from you should be ONLY like this: 25%. Plant is not harvestable yet. "
+            "The Writting response from you should be ONLY like this and REMEMBER if <75%, PLANT IS NOT HARVESTABLE: 25%. Plant is not harvestable yet. "
             "If there's NO CHILLI observed, then just say 0%. Make sure it's concise!"
         )
     elif color_option == "Green Chilli":
@@ -44,7 +44,7 @@ if show_color_options:
             "Get the total of green chilli and the total other of color of chilli can be observed from the image. "
             "Determine and write how many percent green chilli. Then write:  If it's more than (75%) write, "
             "\"Plants is Harvestable\". Else, \"Plant is Not Harvestable yet\". "
-            "The Writting response from you should be ONLY like this: 25%. Plant is not harvestable yet. "
+            "The Writting response from you should be ONLY like this and REMEMBER if <75%, PLANT IS NOT HARVESTABLE: 25%. Plant is not harvestable yet."
             "If there's NO CHILLI observed, then just say 0%. Make sure it's concise!"
         )
 
@@ -61,6 +61,8 @@ uploaded_files = st.file_uploader("Choose images...", type=["jpg", "jpeg", "png"
 
 # Button to submit the request
 submit = st.button("Analyze Images")
+st.markdown("[Go to Retrieve All Data](http://localhost/website/gemini2/retrievealldata.php)")
+
 
 # Process each uploaded image if submit button is clicked
 if submit and uploaded_files:
