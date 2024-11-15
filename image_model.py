@@ -64,11 +64,11 @@ uploaded_files = st.file_uploader("Choose images...", type=["jpg", "jpeg", "png"
 
 # Add the "Analyze Images" button in the first column
 
-    submit = st.button("Analyze Images")
+    st.button("Analyze Images")
 
 # Add the redirect button in the second column
 
-    go_to_retrieve = st.markdown(
+    st.markdown(
         """
         <a href="http://localhost/website/gemini2/retrievealldata.php" target="_blank" style="
             display: inline-block; 
